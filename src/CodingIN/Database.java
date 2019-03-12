@@ -32,7 +32,7 @@ public class Database {
 			// ALSO SET THE CLASSPATH
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
 		} catch (Exception e) {
 			System.out.println(e);
@@ -45,7 +45,7 @@ public class Database {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
 			pst = con.prepareStatement("select * from client_table where ID=? and Pwd=?");
 			pst.setString(1, ID); // this replaces the 1st "?" in the query for username
@@ -70,7 +70,7 @@ public class Database {
 
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
 			String query = "update new_table set Number=?,ID=?,Title=?, where Language = ?";
 			pst = con.prepareStatement(query);
@@ -98,7 +98,7 @@ public class Database {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
 			String query = "insert into client_table(Id, Pwd, Name, Birth, Email) values (?,?,?,?,?)";// ㅇㅇ 맴버2
 			pst = con.prepareStatement(query);
@@ -130,7 +130,7 @@ public class Database {
     	try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
 			pst = con.prepareStatement(query);
 		} catch (SQLException e1) {
@@ -168,7 +168,7 @@ public class Database {
     	try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
 			pst = con.prepareStatement(query);
 		} catch (SQLException e1) {
@@ -204,7 +204,7 @@ public class Database {
 		try {		//숫자새서넘겨주기	
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 			String query1= "select count(*) as cnt from new_table";//갯수
 			String query = "select * from new_table";//테이블에서 가져오는데
 			pst = con.prepareStatement(query1);
@@ -227,7 +227,7 @@ public class Database {
 		try {	//갯수만큼 배열할당해서 만들어주기
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 			String query = "select * from new_table";//테이블에서 가져오는데
 			pst = con.prepareStatement(query);
 			rs = pst.executeQuery();	//갯수
@@ -276,7 +276,7 @@ public class Database {
 		try {		//숫자새서넘겨주기	
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 			String query1= "select count(*) as cnt from new_table where "+search_tab+" like '%"+search+"%'";//갯수
 			String query = "select * from new_table";//테이블에서 가져오는데
 			pst = con.prepareStatement(query1);
@@ -302,7 +302,7 @@ public class Database {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
 			String query = "select * from new_table where "+search_tab+" like '%"+search+"%'";
 			pst = con.prepareStatement(query);
@@ -342,7 +342,7 @@ public class Database {
         try  {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
         	pst = con.prepareStatement(SQL);
             pst.setInt(1, Number);
@@ -394,7 +394,7 @@ public class Database {
         try  {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
         	pst = con.prepareStatement(SQL);
             pst.setInt(1, Number);
@@ -447,7 +447,7 @@ public class Database {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "!ntbt0927");
+					"jdbc:mysql://localhost:3306/myimages?serverTimezone=UTC&useSSL=false", "root", "");
 
 			String query = "select * from new_table where Title = ?";
 			pst = con.prepareStatement(query);
